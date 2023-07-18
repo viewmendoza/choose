@@ -172,19 +172,8 @@ h3 b {
 <body>
   <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
 <form class="form" id="form" onsubmit="return validateForm()">
-<div class="row-one">
-  <input type="text" class="text-input" id="age" autocomplete="off" required/><p class="text">Age</p>
-  <label class="container">
-  <input type="radio" name="radio" id="f"><p class="text">Female</p>
-    <span class="checkmark"></span>
-  </label>
-  <label class="container">
-  <input type="radio" name="radio" id="m"><p class="text">Male</p>
-    <span class="checkmark"></span>
-  </label>
-  </div>
-
 <div class="row-two">
+  <input type="text" class="text-input" id="age" autocomplete="off" required/><p class="text">Age</p>
   <input type="text" class="text-input" id="height" autocomplete="off" required><p class="text">Height (cm)</p>
   <input type="text" class="text-input" id="weight" autocomplete="off" required><p class="text">Weight (kg)</p>
 </div>
@@ -194,12 +183,10 @@ h3 b {
 var age = document.getElementById("age");
 var height = document.getElementById("height");
 var weight = document.getElementById("weight");
-var male = document.getElementById("m");
-var female = document.getElementById("f");
 var form = document.getElementById("form");
 
 function validateForm(){
-  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
+  if(age.value=='' || height.value=='' || weight.value==''){
     alert("All fields are required!");
     document.getElementById("submit").removeEventListener("click", countBmi);
   }else{
@@ -210,25 +197,25 @@ document.getElementById("submit").addEventListener("click", validateForm);
 
 function countBmi(){
   var p = [age.value, height.value, weight.value];
-  if(male.checked){
+  /*if(male.checked){
     p.push("male");
   }else if(female.checked){
-    p.push("female");
+    p.push("female");*/
   }
   form.reset();
   var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
   var result = '';
   if(bmi<18.5){
-    result = 'Underweight';
+    result = 'Plan your budget,talk to a money mentor, structure your accounts';
      }else if(18.5<=bmi&&bmi<=24.9){
-    result = 'Healthy';
+    result = 'talk to a money mentor, structure your accounts';
      }else if(25<=bmi&&bmi<=29.9){
-    result = 'Overweight';
+    result = 'Plan your budget,talk to a money mentor';
      }else if(30<=bmi&&bmi<=34.9){
-    result = 'Obese';
+    result = 'Plan your budget,structure your accounts';
      }else if(35<=bmi){
-    result = 'Extremely obese';
+    result = 'structure your accounts';
      }
   
   var h1 = document.createElement("h1");
