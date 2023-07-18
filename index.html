@@ -14,7 +14,7 @@
 }
 body {
   min-height: 100vh;
-  background: url("https://digitshack.com/codepen/bmical/bg.png");
+  background: #fafafa;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Nunito", sans-serif;
@@ -22,7 +22,7 @@ body {
 .container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 10%;
   transform: translate(-50%, 0%);
 }
 .box {
@@ -47,7 +47,7 @@ body {
 }
 h1 {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 24px;
   padding: 30px 0;
 }
 .content {
@@ -115,24 +115,24 @@ button#calculate:hover {
 <body>
 <div class="container">
   <div class="box">
-    <h1>BMI Calculator</h1>
+    <h1>Financial Wellbeing path selector</h1>
     <div class="content">
       <div class="input">
-        <label for="height">Height(cm)</label>
+        <label for="height">Income</label>
         <input type="number" id="height">
       </div>
       <div class="input">
-        <label for="weight">Weight(kg)</label>
+        <label for="weight">Savings(kg)</label>
         <input type="number" id="weight">
       </div>
      <div class="input">
-        <label for="more">More</label>
+        <label for="more">Expenses</label>
         <input type="number" id="more">
       </div>
-      <button id="calculate">Calculate BMI</button>
+      <button id="calculate">Result</button>
     </div>
     <div class="result">
-      <p>Your BMI is</p>
+      <p>Your Financial Wellbeing path is</p>
       <div id="result">00.00</div>
       <p class="comment"></p>
     </div>
@@ -163,17 +163,17 @@ btn.addEventListener("click", function () {
 
   let status = "";
 
-  if (BMI < 18.5) {
-    status = "Underweight";
+  if (BMI < 75000) {
+    status = "Plan your budget, Talk to a Money Mentor, Structure your accounts";
   }
-  if (BMI >= 18.5 && BMI < 25) {
-    status = "Healthy";
+  if (BMI >= 75000 && BMI < 95000) {
+    status = "Plan your budget, Talk to a Money Mentor";
   }
-  if (BMI >= 25 && BMI < 30) {
-    status = "Overweight";
+  if (BMI >= 95000 && BMI < 120000) {
+    status = "Talk to a Money Mentor, Structure your accounts";
   }
-  if (BMI >= 30) {
-    status = "Obese";
+  if (BMI >= 120000) {
+    status = "Talk to a Money Mentor";
   }
   document.querySelector(
     ".comment"
