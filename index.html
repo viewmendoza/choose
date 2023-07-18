@@ -96,7 +96,7 @@ button#calculate:hover {
 }
 .result p {
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   color: #000;
   margin-bottom: 15px;
 }
@@ -122,14 +122,14 @@ button#calculate:hover {
         <input type="number" id="height">
       </div>
       <div class="input">
-        <label for="weight">Savings(kg)</label>
+        <label for="weight">Savings</label>
         <input type="number" id="weight">
       </div>
      <div class="input">
         <label for="more">Expenses</label>
         <input type="number" id="more">
       </div>
-      <button id="calculate">Result</button>
+      <button id="calculate">Calculate</button>
     </div>
     <div class="result">
       <p>Your Financial Wellbeing path is</p>
@@ -161,10 +161,11 @@ btn.addEventListener("click", function () {
 
   document.querySelector("#result").innerHTML = BMI;
 
-  let status = "";
+  let a.href = "";
 
   if (BMI < 75000) {
-    status = "Plan your budget, Talk to a Money Mentor, Structure your accounts";
+    a.title = "This is the title";
+    a.href = "https://blog.hubspot.com/marketing/how-to-start-a-podcast-on-spotify";
   }
   if (BMI >= 75000 && BMI < 95000) {
     status = "Plan your budget, Talk to a Money Mentor";
@@ -177,7 +178,7 @@ btn.addEventListener("click", function () {
   }
   document.querySelector(
     ".comment"
-  ).innerHTML = `Comment: you are <span id="comment">${status}</span>`;
+  ).innerHTML = `Path: <span id="comment">${status}</span>`;
 });
 
 </script>
