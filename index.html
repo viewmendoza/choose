@@ -1,252 +1,183 @@
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
-  <style>
-    * {
-  font-family: Quicksand;
-  font-size: 16px;
-  color: #333;
-}
+<meta charset="UTF-8">
+<meta http-equiv = "X-UA-Compatible" content= "IE=edge">
+<meta name="viewport" content="width-device-width, intial-scale-1.0">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+<title>Financial Wellbeing road selector</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap");
 
-body {
-  margin: 0;
-  height: 100vh;
+* {
   padding: 0;
-  border: 0;
-  background: linear-gradient(to bottom right,  #F1F2B5, #eef2f3);
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.form {
-  background-color: #fff;
-  height: 350px;
-  width: 450px;
-  border-radius: 20px;
-  margin: 20px auto 20px auto;
-  display: block;
-  border: solid 1px #289df6;
-  
-  box-shadow: 0 0 40px 0 #ddd;
+body {
+  min-height: 100vh;
+  background: url("https://digitshack.com/codepen/bmical/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Nunito", sans-serif;
 }
-
-.form:hover {
-  box-shadow: 0 0 60px 0 #ccc;
-  transition: .4s;
-  transform: scale(1.02);
-}
-
-.row-one {
-  padding: 20px;
-}
-
-.row-two {
-  padding: 20px;
-}
-
-.text-input {
-  width: 60px;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #dbeffe;
-  border: none;
-  outline: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.text-input:last-child {
-  margin-bottom: 35px;
-}
-
-.text-input:hover {
-  background-color: #cbe7fd;
-}
-
-#submit {
-  border: none;
-  border-radius: 10px;
-  height: 40px;
-  width: 140px;
-  background-color: #289df6;
-  color: #fff;
-  margin: auto;
-  display: block;
-  outline: none;
-  cursor: pointer;
-}
-
-#submit:hover{
-  background-color: #0a8ef2;
-}
-
-.text {
-  display: inline-block;
-  margin: 5px 20px 5px 8px;;
-}
-
-.row-one {
-  padding: 30px 20px 15px 20px;
-}
-.row-two {
-  padding: 15px 20px 30px 20px;
-}
-
 .container {
-  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0%);
+}
+.box {
+  min-width: 400px;
+  background: #fafafa;
+  border-radius: 38px;
+  text-align: center;
   position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  user-select: none;
+  margin-bottom: 150px;
 }
-
-.container input {
-  position: absolute;
-  opacity: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #dbeffe;
-  border-radius: 50%;
-}
-
-.container:hover input ~ .checkmark {
-  background-color: #cbe7fd;
-}
-
-.container input:checked ~ .checkmark {
-  background-color: #289df6;
-}
-
-h1 {
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-  color: #289df6;
-  padding-top: 15px;
-  display: block;
-}
-
-h2 {
-  font-size: 22px;
-  font-weight: 300;
-  text-align: center;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: 300;
-  text-align: center;
-  padding: 15px;
-}
-
-h3 b {
-  font-size: 32px;
-  font-weight: 300;
-  color: #289df6;
-}
-
-.checkmark:after {
+.box::before {
   content: "";
   position: absolute;
-  display: none;
+  height: 110%;
+  width: 110%;
+  left: -5%;
+  top: -5%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
+  border-radius: 60px;
+  z-index: -1;
 }
-
-.container input:checked ~ .checkmark:after {
+h1 {
+  font-weight: bold;
+  font-size: 36px;
+  padding: 30px 0;
+}
+.content {
+  padding: 0 40px;
+}
+.input {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 28px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.input label {
   display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
 }
-
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.input input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #4f7df9;
+  width: 60%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
 }
-  </style>
- </head>
+button#calculate {
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  background: #4f7df9;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: background 0.2s ease;
+}
+button#calculate:hover {
+  background: #0044ff;
+}
+.result {
+  padding: 30px 20px;
+}
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+}
+.result #result {
+  font-size: 36px;
+  font-weight: 900;
+  color: #4f7df900;
+  margin-bottom: 25px;
+}
+#comment {
+  color: #4f7df9;
+  font-weight: 800;
+}
+</style>
+</head>
 <body>
-  <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
-<form class="form" id="form" onsubmit="return validateForm()">
-<div class="row-one">
-  <input type="text" class="text-input" id="age" autocomplete="off" required/><p class="text">Income</p>
-  <label class="container">
-  <input type="radio" name="radio" id="f"><p class="text">Female</p>
-    <span class="checkmark"></span>
-  </label>
-  <label class="container">
-  <input type="radio" name="radio" id="m"><p class="text">Male</p>
-    <span class="checkmark"></span>
-  </label>
+<div class="container">
+  <div class="box">
+    <h1>BMI Calculator</h1>
+    <div class="content">
+      <div class="input">
+        <label for="height">Height(cm)</label>
+        <input type="number" id="height">
+      </div>
+      <div class="input">
+        <label for="weight">Weight(kg)</label>
+        <input type="number" id="weight">
+      </div>
+     <div class="input">
+        <label for="more">More</label>
+        <input type="number" id="more">
+      </div>
+      <button id="calculate">Calculate BMI</button>
+    </div>
+    <div class="result">
+      <p>Your BMI is</p>
+      <div id="result">00.00</div>
+      <p class="comment"></p>
+    </div>
   </div>
-
-<div class="row-two">
-  <input type="text" class="text-input" id="height" autocomplete="off" required><p class="text">Savings</p>
-  <input type="text" class="text-input" id="weight" autocomplete="off" required><p class="text">Expenses</p>
 </div>
-<button type="button" id="submit">Submit</button>
-</form>
 <script>
-var age = document.getElementById("age");
-var height = document.getElementById("height");
-var weight = document.getElementById("weight");
-var male = document.getElementById("m");
-var female = document.getElementById("f");
-var form = document.getElementById("form");
+const btn = document.getElementById("calculate");
 
-function validateForm(){
-  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
-    alert("All fields are required!");
-    document.getElementById("submit").removeEventListener("click", countBmi);
-  }else{
-    countBmi();
+btn.addEventListener("click", function () {
+  let height = document.querySelector("#height").value;
+  let weight = document.querySelector("#weight").value;
+  let more = document.querySelector("#more").value;
+
+  if (height == "" || weight == ""|| more == ""){
+    alert("Please fill out the input fields!");
+    return;
   }
-}
-document.getElementById("submit").addEventListener("click", validateForm);
 
-function countBmi(){
-  var p = [age.value, height.value, weight.value];
-  if(male.checked){
-    p.push("male");
-  }else if(female.checked){
-    p.push("female");
+  // BMI = weight in KG / (height in m * height in m)
+
+  height = height / 100;
+
+  let BMI = weight / (height * height) / more;
+
+  BMI = BMI.toFixed(2);
+
+  document.querySelector("#result").innerHTML = BMI;
+
+  let status = "";
+
+  if (BMI < 18.5) {
+    status = "Underweight";
   }
-  form.reset();
-  var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
-      
-  var result = '';
-  if(bmi<18.5){
-    result = 'Plan your budget,Talk to a Money Mentor, Structure your accounts';
-     }else if(18.5<=bmi&&bmi<=24.9){
-    result = 'Talk to a Money Mentor, Structure your accounts';
-     }else if(25<=bmi&&bmi<=29.9){
-    result = 'Plan your budget,Talk to a Money Mentor';
-     }else if(30<=bmi&&bmi<=34.9){
-    result = 'Plan your budget';
-     }else if(35<=bmi){
-    result = 'Talk to a Money Mentor';
-     }
-  
-  var h1 = document.createElement("h1");
-  var h2 = document.createElement("h2");
+  if (BMI >= 18.5 && BMI < 25) {
+    status = "Healthy";
+  }
+  if (BMI >= 25 && BMI < 30) {
+    status = "Overweight";
+  }
+  if (BMI >= 30) {
+    status = "Obese";
+  }
+  document.querySelector(
+    ".comment"
+  ).innerHTML = `Comment: you are <span id="comment">${status}</span>`;
+});
 
-  var t = document.createTextNode(result);
-  var b = document.createTextNode('BMI: ');
-  var r = document.createTextNode(parseFloat(bmi).toFixed(2));
-  
-  h1.appendChild(t);
-  h2.appendChild(b);
-  h2.appendChild(r);
-  
-  document.body.appendChild(h1);
-  document.body.appendChild(h2);
-  document.getElementById("submit").removeEventListener("click", countBmi);
-  document.getElementById("submit").removeEventListener("click", validateForm);
-}
-document.getElementById("submit").addEventListener("click", countBmi);
-  </script>
-</body>
+</script>
